@@ -4,8 +4,7 @@ var defangIPaddr = function(address) {
   let pos = 0, newPos = 0;
   let result = "";
   
-  while ( true )
-  {
+  while ( true ) {
     newPos = address.indexOf( ".", pos );
     if ( newPos == -1 )
       break;
@@ -13,5 +12,6 @@ var defangIPaddr = function(address) {
     pos = newPos + 1;
   }
   result += address.slice(pos);
+  
   return (result);
 };
