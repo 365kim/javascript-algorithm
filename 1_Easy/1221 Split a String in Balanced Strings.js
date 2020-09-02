@@ -1,11 +1,11 @@
 /* https://leetcode.com/problems/split-a-string-in-balanced-strings/ */
 
-var balancedStringSplit = function(s) {
+var balancedStringSplit = function (s) {
   let count = 0;
   let firstLetter, unbalance;
   let i = 0;
-  
-  while ( i < s.length) {
+
+  while (i < s.length) {
     firstLetter = s[i];
     unbalance = 1;
     i++;
@@ -19,6 +19,6 @@ var balancedStringSplit = function(s) {
     }
     count++;
   }
-  
+
   return count;
 };
