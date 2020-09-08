@@ -11,17 +11,17 @@ let rangeSumBST = (rootNode, L, R) => {
 
   while (stack.length) {
     let curr = stack.shift(); // current node
+
     if (curr === null) {
       continue;
     }
-
     if (curr.val >= L && curr.val <= R) {
       sum += curr.val;
     }
-    if (curr.val > L) {
+    if (curr.left) {
       stack.push(curr.left);
     }
-    if (curr.val < R) {
+    if (curr.right) {
       stack.push(curr.right);
     }
   }
