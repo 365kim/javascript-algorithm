@@ -10,7 +10,7 @@ let rangeSumBST = (rootNode, L, R) => {
   stack.push(rootNode);
 
   while (stack.length) {
-    let curr = stack.shift(); // current node
+    let curr = stack.pop(); // current node
 
     if (curr === null) {
       continue;
