@@ -1,7 +1,7 @@
 # 하우투 in JS
 
 ### :rocket: 몇 자리 숫자인지 알아내기
-- `num.toString().length`
+- `num.toString().length;`
 
   ```js
   let num = 1004;
@@ -10,6 +10,7 @@
   console.log(num.toString().length);
   // 4
   ```
+<br>
 
 ### :rocket: 변수 여러개 한 번에 초기화하기
 - `let [a, b] = [1, 2]`
@@ -21,17 +22,27 @@
   console.log(c); // 5
   console.log(d); // kim
   ```
+<br>
 
 ### :rocket: n개의 빈 배열을 가진 배열 선언하기
-- `new Array(5).fill().map(() => [])`
+- `new Array(n).fill().map(() => []);`
 
   ```js
   console.log(new Array(5).fill().map(() => []));
   /// [ [], [], [], [], [] ]
   ```
+<br>
+
+### :rocket: 배열 순서 뒤집기
+- `array.reverse();`
+  ```
+  console.log([1, 2, 3].reverse());
+  // [ 3, 2, 1 ]
+  ```
+<br>
 
 ### :rocket: 문자열 순서 뒤집기
-- `[...str].reverse().join("")`
+- `[...str].reverse().join("");`
 
   ```js
   console.log([..."365kim"]);
@@ -46,9 +57,10 @@
   console.log([..."365kim"].reverse().join(""));
   // mik563
   ```
+<br>
 
 ### :rocket: 숫자형 변수, 배열로 필요한 숫자 배열 재구성하기
-- `[].concat(a, str.slice(n, m))`
+- `[].concat(a, str.slice(n, m));`
 
   ```js
   let num = 3;
@@ -59,6 +71,7 @@
   // [ 3, 6, 5 ]
 
   ```
+<br>
 
 ### :rocket: 연속된 순열 만들기
 - `new Array(n).fill().map((v, i) => i);`
@@ -67,6 +80,7 @@
   console.log(new Array(5).fill().map((v, i) => i + 1));
   /// [ 1, 2, 3, 4, 5 ]
   ```
+<br>
 
 ### :rocket: 연속된 문자열 만들기
 - `new Array(n).fill().map((v, i) => String.fromCharCode(ascii));`
@@ -77,9 +91,10 @@
   console.log(new Array(5).fill().map((v, i) => String.fromCharCode(97 + i)));
   // [ 'a', 'b', 'c', 'd', 'e' ]
   ```
+<br>
 
 ### :rocket: 문자열에서 a <=> b 교체하기
-- `str.replace(/a/gi, "?").replace(/b)/gi, "a").replace(/\?/gi, "b"`
+- `str.replace(/a/gi, "?").replace(/b)/gi, "a").replace(/\?/gi, "b");`
   - g : global
   - i : case-insensitive
 
@@ -95,9 +110,10 @@
   );
   // (365kim)
   ```
+<br>
 
 ### 배열에서 중복되지 않은 요소 개수 세기
-- `new Set(array.size)`
+- `new Set(array.size);`
 
   ```js
   console.log(new Set([1, 1, 2]));
@@ -109,12 +125,14 @@
   console.log(new Set([1, 1, 2]).add(3).size);
   // 3
   ```
+<br>
 
 ### :rocket: 깊은 복사
 - `clone = JSON.parse(JSON.stringify(original));`
+<br>
 
 ### :rocket: 계산기
-- `function operate(a, b, op)`
+- `function operate(a, b, op);`
 
   ```js
   function operate(a, b, op) {
@@ -130,6 +148,7 @@
     }
   }
   ```
+<br>
 
 ### :rocket: 추가예정
 - `prototype`
