@@ -154,6 +154,28 @@
   ```
 <br>
 
+### :rocket: 대문자, 소문자, 숫자만 골라내기
+- `c.charCodeAt(0)`
+
+  ```js
+  console.log("A".charCodeAt(0), "Z".charCodeAt(0));
+  // 65 90
+  let a = "K";
+  console.log(a.charCodeAt(0) >= 65 && a.charCodeAt(0) <= 90);
+  // true
+  console.log("a".charCodeAt(0), "z".charCodeAt(0));
+  // 97 112
+  let b = "i";
+  console.log(b.charCodeAt(0) >= 97 && b.charCodeAt(0) <= 122);
+  // true
+  console.log("0".charCodeAt(0), "9".charCodeAt(0));
+  // 48 57
+  let c = "3";
+  console.log(c.charCodeAt(0) >= 48 && c.charCodeAt(0) <= 57);
+  // true
+  ```
+<br>
+
 ### :rocket: 문자열에서 a <=> b 교체하기
 - `str.replace(/a/gi, "?").replace(/b)/gi, "a").replace(/\?/gi, "b");`
 
