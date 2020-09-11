@@ -191,7 +191,7 @@
   ```
 <br>
 
-### 배열에서 중복되지 않은 요소 개수 세기
+### :rocket: 배열에서 중복되지 않은 요소 개수 세기
 - `new Set(array.size);`
 
   ```js
@@ -206,7 +206,7 @@
   ```
 <br>
 
-### 1차원 배열에서 특정 요소만 삭제하기
+### :rocket: 1차원 배열에서 특정 요소만 삭제하기
 - `array.splice(array.indexOf(target), 1)`
 
   ```js
@@ -221,7 +221,7 @@
   ```
 <br>
 
-### 2차원 배열에서 특정 요소만 삭제하기
+### :rocket: 2차원 배열에서 특정 요소만 삭제하기
 - `array.splice(array.findIndex(list) => f(list))`
 
   ```js
