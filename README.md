@@ -1,6 +1,6 @@
 # 하우투 in JS
 
-### :rocket: 몇 자리 숫자인지 알아내기
+### :rocket: 숫자형 자릿수 구하기
 - `num.toString().length;`
 
   ```js
@@ -22,6 +22,7 @@
   console.log(c); // 5
   console.log(d); // kim
   ```
+- :point_right: `[a,b] === [1,2]` 와 같은 비교는 할 수 없음
 <br>
 
 ### :rocket: n개의 빈 배열을 가진 배열 선언하기
@@ -127,6 +128,38 @@
   ```
 <br>
 
+### 1차원 배열에서 특정 요소만 삭제하기
+- `array.splice(array.indexOf(target), 1)`
+
+  ```js
+  let array = ["365", "js", "kim"];
+  let i = array.indexOf("js");
+  console.log(i);
+  // 1
+  console.log(array.splice(i, 1));
+  // [ 'js' ]
+  console.log(array);
+  // [ '365', 'kim' ]
+  ```
+<br>
+
+### 2차원 배열에서 특정 요소만 삭제하기
+- `array.splice(array.findIndex(list) => f(list))`
+
+
+  ```js
+  let array = [  [3, 6, 5],  ["j", "s"],  ["k", "i", "m"], ];
+  let i = array.findIndex((list) => list[0] === "j" && list[1] === "s");
+  console.log(i);
+  // 1
+  console.log(array.splice(i, 1));
+  // [ [ 'j', 's' ] ]
+  console.log(array);
+  // [ [ 3, 6, 5 ], [ 'k', 'i', 'm' ] ]
+  ```
+- :point_right: `indexOf(["j", "s"])`로는 찾을 수 없음.
+<br>
+
 ### :rocket: 깊은 복사
 - `clone = JSON.parse(JSON.stringify(original));`
 <br>
@@ -150,6 +183,24 @@
   ```
 <br>
 
+### :rocket: 비트연산 이용해서 모든 부분집합 만들기
+- function makeComb(n);
+
+  ```js
+    let comb = [];
+    for (let i = 0; i < 1 << n; i++) { // 000...0부터 111...1까지
+      let item = "";
+      for (let j = 0; j < n; j++) {
+        if ((i & (1 << j)) !== 0) { // And연산
+          item += j;
+        }
+      }
+      combination.push(item);
+    }
+  ```
+
+
+<br>
 ### :rocket: 추가예정
 - `prototype`
 
