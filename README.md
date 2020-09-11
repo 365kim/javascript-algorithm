@@ -12,6 +12,41 @@
   ```
 <br>
 
+### :rocket: 진수변환
+- `parseInt(str, base);`
+- `num.toString(base);`
+
+  ```js
+  console.log(parseInt("1111", 2));
+  // 15
+  console.log(parseInt("f", 16));
+  // 15
+  console.log(parseInt("1111", 10));
+  // 1111
+  console.log((15).toString(2));
+  // "1111"
+  console.log((15).toString(16));
+  // "f"
+  console.log((+"15").toString(16));
+  // "f"
+  ```
+<br>
+
+### :rocket: 문자열 길이 채우기
+- `str.padStart(n, c);`
+
+  ```js
+  console.log("f".padStart(3));
+  // "  f"
+  console.log("f".padStart(3, "0"));
+  // "00f"
+  console.log("f".padStart(3, "abcde"));
+  // "abf"
+  console.log("f".padEnd(3, "0"));
+  // "f00"
+  ```
+<br>
+
 ### :rocket: 변수 여러개 한 번에 초기화하기
 - `let [a, b] = [1, 2]`
 
@@ -61,6 +96,30 @@
   ```
 <br>
 
+### :rocket: 행열 전환하기
+  ```js
+  let arr = [
+    ["1", "365kim", "Seoul"],
+    ["2", "247lee", "Incheon"],
+  ];
+  let [rowLen, colLen] = [arr.length, arr[0].length];
+  let newArr = new Array(colLen).fill().map(() => []);
+  for (let i = 0; i < rowLen; i++) {
+    for (let j = 0; j < colLen; j++) {
+      newArr[j].push(arr[i][j]);
+    }
+  }
+  console.log(newArr);
+  /*
+  [
+    ["1", "2"],
+    ["365kim", "247lee"],
+    ["Seoul", "Incheon"],
+  ];
+  */
+  ```
+<br>
+
 ### :rocket: 숫자형 변수, 배열로 필요한 숫자 배열 재구성하기
 - `[].concat(a, str.slice(n, m));`
 
@@ -75,7 +134,7 @@
   ```
 <br>
 
-### :rocket: 연속된 순열 만들기
+### :rocket: 연속된 순열 배열 만들기
 - `new Array(n).fill().map((v, i) => i);`
 
   ```js
@@ -179,7 +238,28 @@
   ```
 <br>
 
-### :rocket: 비트연산 이용해서 모든 부분집합 만들기
+### :rocket: map으로 모든 부분집합 만들기
+- `function powerset(arr);`
+
+  ```js
+  const powerset = (arr) =>
+    arr.reduce(
+      (subsets, value) => subsets.concat(subsets.map((set) => [...set, value])),
+      [[]]
+    );
+  console.log(powerset([0, 1, 2]));
+  /*
+  [
+    [],       [ 0 ],
+    [ 1 ],    [ 0, 1 ],
+    [ 2 ],    [ 0, 2 ],
+    [ 1, 2 ], [ 0, 1, 2 ]
+  ]
+  */
+  ```
+<br>
+
+### :rocket: 비트연산으로 모든 부분집합 만들기
 - `function powerSet(n);`
 
   ```js
@@ -194,9 +274,8 @@
       combination.push(item);
     }
   ```
-
-
 <br>
+
 ### :rocket: 추가예정
 - `prototype`
 
