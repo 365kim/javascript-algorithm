@@ -36,7 +36,8 @@
 
 ### :rocket: 배열 순서 뒤집기
 - `array.reverse();`
-  ```
+
+  ```js
   console.log([1, 2, 3].reverse());
   // [ 3, 2, 1 ]
   ```
@@ -96,19 +97,15 @@
 
 ### :rocket: 문자열에서 a <=> b 교체하기
 - `str.replace(/a/gi, "?").replace(/b)/gi, "a").replace(/\?/gi, "b");`
-  - g : global
-  - i : case-insensitive
 
   ```js
   console.log(")365kim(");
   // )365kim(
-  console.log(")365kim(".replace(/\(/gi, "a"));
+  console.log(")365kim(".replace(/\(/gi, "a")); // g: global, i: case-insensitive
   // )365kima
   console.log(")365kim(".replace(/\(/gi, "a").replace(/\)/gi, "("));
   // (365kima
-  console.log(
-    ")365kim(".replace(/\(/gi, "a").replace(/\)/gi, "(").replace(/a/gi, ")")
-  );
+  console.log(")365kim(".replace(/\(/gi, "a").replace(/\)/gi, "(").replace(/a/gi, ")"));
   // (365kim)
   ```
 <br>
@@ -145,7 +142,6 @@
 
 ### 2차원 배열에서 특정 요소만 삭제하기
 - `array.splice(array.findIndex(list) => f(list))`
-
 
   ```js
   let array = [  [3, 6, 5],  ["j", "s"],  ["k", "i", "m"], ];
