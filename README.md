@@ -184,7 +184,7 @@
 <br>
 
 ### :rocket: 비트연산 이용해서 모든 부분집합 만들기
-- function makeComb(n);
+- `function powerSet(n);`
 
   ```js
     let comb = [];
