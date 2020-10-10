@@ -13,8 +13,7 @@
 <br>
 
 ### :rocket: 진수변환
-- `parseInt(str, base);`
-- `num.toString(base);`
+- `parseInt(str, base);` // n진수 숫자로 변환
 
   ```js
   console.log(parseInt("1111", 2));
@@ -23,6 +22,10 @@
   // 15
   console.log(parseInt("1111", 10));
   // 1111
+  ```
+- `num.toString(base);` // n진수 문자열로 변환
+
+  ```js
   console.log((15).toString(2));
   // "1111"
   console.log((15).toString(16));
@@ -92,6 +95,24 @@
   // m,i,k,5,6,3
 
   console.log([..."365kim"].reverse().join(""));
+  // mik563
+  ```
+- `str.split("").reverse().join("");`
+
+  ```js
+  console.log("365kim".split());
+  // [ '365kim' ]
+  
+  console.log("365kim".split(""));
+  // [ '3', '6', '5', 'k', 'i', 'm' ]
+
+  console.log("365kim".split("").reverse());
+  // ['m', 'i', 'k', '5', '6', '3']
+
+  console.log("365kim".split("").reverse().join());
+  // m,i,k,5,6,3
+
+  console.log("365kim".split("").reverse().join(""));
   // mik563
   ```
 <br>
