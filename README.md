@@ -13,7 +13,7 @@
 <br>
 
 ### :rocket: 진수변환
-- `parseInt(str, base);` // n진수 숫자로 변환
+- `parseInt(str, base);` // 문자열 => n진수 숫자로 변환
 
   ```js
   console.log(parseInt("1111", 2));
@@ -23,7 +23,7 @@
   console.log(parseInt("1111", 10));
   // 1111
   ```
-- `num.toString(base);` // n진수 문자열로 변환
+- `num.toString(base);` // 숫자 => n진수 문자열로 변환
 
   ```js
   console.log((15).toString(2));
