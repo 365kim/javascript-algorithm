@@ -35,6 +35,19 @@
   ```
 <br>
 
+### :rocket: a의 b승 구하기
+- `Math.pow(base, exponent);`
+
+  ```js
+  console.log(Math.pow(4, 2));
+  // 16
+  console.log(Math.pow("4", "2"));
+  // 16
+  console.log(Math.pow(4, 0.5));
+  // 2
+  ```
+<br>
+
 ### :rocket: 문자열 길이 채우기
 - `str.padStart(n, c);`
 
