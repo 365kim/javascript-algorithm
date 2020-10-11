@@ -188,26 +188,38 @@
   ```
 <br>
 
-### :rocket: 대문자, 소문자, 숫자만 골라내기
-- `c.charCodeAt(0)`
+### :rocket: 대소문자 변환
+- `str.toUpperCase()` `str.toLowerCase()`
 
   ```js
-  console.log("A".charCodeAt(0), "Z".charCodeAt(0));
-  // 65 90
-  let a = "K";
-  console.log(a.charCodeAt(0) >= 65 && a.charCodeAt(0) <= 90);
-  // true
-  console.log("a".charCodeAt(0), "z".charCodeAt(0));
-  // 97 112
-  let b = "i";
-  console.log(b.charCodeAt(0) >= 97 && b.charCodeAt(0) <= 122);
-  // true
-  console.log("0".charCodeAt(0), "9".charCodeAt(0));
-  // 48 57
-  let c = "3";
-  console.log(c.charCodeAt(0) >= 48 && c.charCodeAt(0) <= 57);
+  console.log("365kim".toUpperCase());
+  // 365KIM
+  console.log("365KIM".toLowerCase());
+  // 365kim
+  ```
+
+### :rocket: 숫자만, 대문자만, 소문자만 골라내기
+- `n.charCodeAt(0)`
+  ```js
+  let n = "3";
+  console.log(n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
   // true
   ```
+- `a === a.toUpperCase()`
+  ```js
+  let a = "K";
+  console.log(a === a.toUpperCase());
+  // true
+  console.log(a.charCodeAt(0) >= 65 && a.charCodeAt(0) <= 90);
+  // true
+  ```
+- `a === a.toLowerCase()`
+  ```js
+  let b = "i";
+  console.log(b === b.toLowerCase());
+  // true
+  console.log(b.charCodeAt(0) >= 97 && b.charCodeAt(0) <= 122);
+  // true
 <br>
 
 ### :rocket: 문자열에서 a <=> b 교체하기
