@@ -197,6 +197,7 @@
   console.log("365KIM".toLowerCase());
   // 365kim
   ```
+<br>
 
 ### :rocket: 숫자만, 대문자만, 소문자만 골라내기
 - `n.charCodeAt(0)`
