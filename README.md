@@ -1,5 +1,22 @@
 # 하우투 in JS
 
+### :rocket: 알파벳순, 오름차순 정렬하기
+- `arr.sort();`
+  ```js
+  let strArr = ["b", "a", "c"];
+  console.log(strArr.sort());
+  // [a, b, c]
+  ```
+- `arr.sort((a, b) => a - b);`
+  ```js
+  let numArr = [19, 9, 29];
+  console.log(numArr.sort());
+  // [19, 29, 9]
+  console.log(numArr.sort((a, b)=> a - b));
+  // [9, 19, 29]
+  ```
+<br>
+
 ### :rocket: 숫자형 자릿수 구하기
 - `num.toString().length;`
 
