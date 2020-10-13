@@ -2,12 +2,14 @@
 
 ### :rocket: 알파벳순, 오름차순 정렬하기
 - `arr.sort();`
+
   ```js
   let strArr = ["b", "a", "c"];
   console.log(strArr.sort());
   // [a, b, c]
   ```
 - `arr.sort((a, b) => a - b);`
+
   ```js
   let numArr = [19, 9, 29];
   console.log(numArr.sort());
