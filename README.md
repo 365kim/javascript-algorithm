@@ -231,12 +231,14 @@
 
 ### :rocket: 숫자만, 대문자만, 소문자만 골라내기
 - `n.charCodeAt(0)`
+
   ```js
   let n = "3";
   console.log(n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
   // true
   ```
 - `a === a.toUpperCase()`
+
   ```js
   let a = "K";
   console.log(a === a.toUpperCase());
@@ -245,6 +247,7 @@
   // true
   ```
 - `a === a.toLowerCase()`
+
   ```js
   let b = "i";
   console.log(b === b.toLowerCase());
