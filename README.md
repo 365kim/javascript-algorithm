@@ -104,6 +104,17 @@
   ```
 <br>
 
+### :rocket: 서로 동일한 배열인지 확인하기
+- `길이 동일 && 값 동일`
+
+  ```js
+  let arr1 = [3, 6, 5, "kim"];
+  let arr2 = [3, 6, 5, "kim"];
+  console.log(arr1.length === arr2.length && arr1.every((v, i) => v === arr2[i]));
+  // true
+  ```
+<br>
+
 ### :rocket: 배열 순서 뒤집기
 - `array.reverse();`
 
@@ -269,6 +280,23 @@
   // Set { 1, 2, 3 }
   console.log(new Set([1, 1, 2]).add(3).size);
   // 3
+  ```
+<br>
+
+### :rocket: 배열에서 빈도에 따라 객체만들고 최대값 찾기
+- `new Set(array.size);`
+
+  ```js
+  let arr = ["반대", "기권", "찬성", "찬성", "무효", "반대", "찬성", "찬성", "찬성", "반대"];
+  let board = {};
+  arr.forEach((v) => (board[v] = board[v] === undefined ? 1 : ++board[v]));
+  console.log(board);
+  // { '찬성': 5, '무효': 1, '반대': 3, '기권': 1 }
+  let major = Object.keys(board).reduce((acc, cur) =>
+    board[acc] >= board[cur] ? acc : cur
+  );
+  console.log(major, board[major]);
+  //찬성 5
   ```
 <br>
 
