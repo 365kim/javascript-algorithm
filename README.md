@@ -32,7 +32,7 @@
 <br>
 
 ### :rocket: 진수변환
-- `parseInt(str, base);` // 문자열 => n진수 숫자로 변환
+- 문자열 => 숫자 `parseInt(str, base);`
 
   ```js
   console.log(parseInt("1111", 2));
@@ -42,14 +42,16 @@
   console.log(parseInt("1111", 10));
   // 1111
   ```
-- `num.toString(base);` // 숫자 => n진수 문자열로 변환
+- 숫자 => 문자열 `num.toString(base);`
 
   ```js
-  console.log((15).toString(2));
+  console.log((15).toString(2)); // 숫자 => 문자열
   // "1111"
+  console.log(+(15).toString(2)); // 숫자 => 숫자
+  // 1111
   console.log((15).toString(16));
   // "f"
-  console.log((+"15").toString(16));
+  console.log((+"15").toString(16)); // 문자열 => 문자열
   // "f"
   ```
 <br>
@@ -338,25 +340,6 @@
 - `clone = JSON.parse(JSON.stringify(original));`
 <br>
 
-### :rocket: 계산기
-- `function operate(a, b, op);`
-
-  ```js
-  function operate(a, b, op) {
-    switch (op) {
-      case "+":
-        return a + b;
-      case "-":
-        return a - b;
-      case "*":
-        return a * b;
-      case "/":
-        return a / b;
-    }
-  }
-  ```
-<br>
-
 ### :rocket: map으로 모든 부분집합 만들기
 - `function powerset(arr);`
 
@@ -392,6 +375,60 @@
       }
       combination.push(item);
     }
+  ```
+<br>
+
+### :rocket: 소수판별
+  ```js
+  const isPrime = (n) => {
+    let sqrtN = Math.sqrt(n);
+    for (let i = 2; i <= sqrtN; i++)
+      if (n % i === 0) {
+        return false;
+      }
+    return n > 1;
+  };
+  ```
+
+### :rocket: 요일판별
+  ```js
+  const daysEn = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const daysKo = ["일", "월", "화", "수", "목", "금", "토"];
+
+  const dateToDay = (y, m, d) => {
+    let theDate = new Date(`${y}-${m}-${d}`);
+    console.log(theDate);
+    // 2020-10-15T00:00:00.000Z
+
+    let theDay = theDate.getDay();
+    console.log(theDay);
+    // 4 (0부터 시작)
+
+    let theDayEn = daysEn[theDay];
+    let theDayKo = daysKo[theDay];
+    console.log(theDayEn);
+    // THU
+    console.log(theDayKo);
+    // 목
+  };
+
+  dateToDay(2020, 10, 15);
+  ```
+
+### :rocket: 계산기
+  ```js
+  const operate = (a, b, op) => {
+    switch (op) {
+      case "+":
+        return a + b;
+      case "-":
+        return a - b;
+      case "*":
+        return a * b;
+      case "/":
+        return a / b;
+    }
+  }
   ```
 <br>
 
