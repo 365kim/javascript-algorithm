@@ -19,6 +19,28 @@
   ```
 <br>
 
+### :rocket: 배열의 최댓값 구하기
+- `Math.max(...numArr);`
+
+  ```js
+  let numArr = [3, 6, 5];
+  console.log(Math.max(numArr));
+  // NaN
+  console.log(Math.max(...numArr));
+  // 6
+  ```
+<br>
+
+### :rocket: 배열의 n번째로 큰 수 구하기
+- `numArr.sort((a, b) => b - a)[n];`
+
+  ```js
+  let numArr = [1, 2, 3, 4, 5];
+  console.log(numArr.sort((a, b) => b - a)[1]);
+  // 4
+  ```
+<br>
+
 ### :rocket: 숫자형 자릿수 구하기
 - `num.toString().length;`
 
@@ -95,6 +117,42 @@
   console.log(d); // kim
   ```
 - :point_right: `[a,b] === [1,2]` 와 같은 비교는 할 수 없음
+<br>
+
+### :rocket: 배열의 요소 자료형 바꾸기
+- 숫자요소 -> 문자요소 `arrNum.map((v) => v.toString());`
+
+  ```js
+  let arrNum = [3, 6, 5];
+  console.log(arrNum.map((v) => v.toString()));
+  // [ '3', '6', '5' ]
+  ```
+- 문자요소 -> 숫자요소 `strNum.map((v) => +v);` 
+
+  ```js
+  let strNum = ["3", "6", "5"];
+  console.log(strNum.map((v) => +v));
+  // [ 3, 6, 5 ]
+  ```
+<br>
+
+### :rocket: 객체를 배열로 바꾸기
+- `Object.entries(obj);`
+
+  ```js
+  const obj = {
+    1: "breakfast",
+    2: "lunch",
+    3: "dinner",
+  };
+
+  console.log(Object.keys(obj));
+  // [ '1', '2', '3' ]
+  console.log(Object.values(obj));
+  // [ 'breakfast', 'lunch', 'dinner' ]
+  console.log(Object.entries(obj));
+  // [ [ '1', 'breakfast' ], [ '2', 'lunch' ], [ '3', 'dinner' ] ]
+  ```
 <br>
 
 ### :rocket: n개의 빈 배열을 가진 배열 선언하기
@@ -378,6 +436,21 @@
   ```
 <br>
 
+### :rocket: 대문자는 소문자로, 소문자는 대문자로
+  ```js
+  const swapUpperWithLower = (str) => {
+    let res = "";
+    for (let i = 0; i < str.length; i++) {
+      res +=
+        str[i].toUpperCase() === str[i]
+          ? str[i].toLowerCase()
+          : str[i].toUpperCase();
+    }
+    return res;
+  };
+  ```
+<br>
+
 ### :rocket: 소수판별
   ```js
   const isPrime = (n) => {
@@ -389,6 +462,7 @@
     return n > 1;
   };
   ```
+<br>
 
 ### :rocket: 요일판별
   ```js
@@ -414,6 +488,7 @@
 
   dateToDay(2020, 10, 15);
   ```
+<br>
 
 ### :rocket: 계산기
   ```js
@@ -431,6 +506,43 @@
   }
   ```
 <br>
+
+### :rocket: 버블정렬
+  ```js
+  const bubbleSort = (arr) => {
+    let res = arr.slice(); // 깊은 복사
+
+    for (let i = 0; i < res.length - 1; i++) {
+      for (let j = 0; j < res.length - i; j++) {
+        if (res[j] > res[j + 1]) {
+          let temp = res[j];
+          res[j] = res[j + 1];
+          res[j + 1] = temp;
+        }
+      }
+    }
+    return res;
+  };
+  ```
+  ```js
+  const betterBubbleSort = (arr) => {
+    let len = arr.length - 1;
+    let swapped;
+    do {
+      swapped = false;
+
+      for (let i = 0; i < len; i++) {
+        if (arr[i] > arr[i + 1]) {
+          let temp = arr[i];
+          arr[i] = arr[i + 1];
+          arr[i + 1] = temp;
+          swapped = true;
+        }
+      }
+    } while (swapped);
+    return arr;
+  };
+  ```
 
 ### :rocket: 추가예정
 - `prototype`
