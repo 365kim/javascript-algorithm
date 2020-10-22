@@ -346,6 +346,19 @@
   ```
 <br>
 
+### :rocket: 배열에서 키워드 빈도 구하기
+- `str.match(/키워드/g).length;`
+
+  ```js
+    let arr = ["반대", "기권", "찬성", "찬성"];
+    console.log(arr.join());
+    // 반대,기권,찬성,찬성
+    console.log(arr.join().match(/찬성/g));
+    // [ '찬성', '찬성' ]
+    console.log(arr.join().match(/찬성/g).length);
+    // 2
+<br>
+
 ### :rocket: 배열에서 빈도에 따라 객체만들고 최대값 찾기
 - `new Set(array.size);`
 
@@ -398,9 +411,33 @@
 - `clone = JSON.parse(JSON.stringify(original));`
 <br>
 
-### :rocket: map으로 모든 부분집합 만들기
-- `function powerset(arr);`
+### :rocket: 콤마찍기
+- 내장함수 `n.toLocaleString()`
 
+  ```js
+  console.log((123456789).toLocaleString());
+  // 123,456,789
+  ```
+  
+- 재귀함수 `putComma(s.slice(0, len-3)) + "," s.slice(len-3)`
+  
+  ```js
+  const putComma = (s) => {
+    if (s.length <= 3) {
+      return s;
+    } else {
+      return putComma(s.slice(0, s.length - 3)) + "," + s.slice(s.length - 3);
+    }
+  };
+
+  console.log(putComma("123456789"));
+  // "123,456,789"
+  ```
+
+<br>
+
+
+### :rocket: map으로 모든 부분집합 만들기
   ```js
   const powerset = (arr) =>
     arr.reduce(
@@ -420,18 +457,18 @@
 <br>
 
 ### :rocket: 비트연산으로 모든 부분집합 만들기
-- `function powerSet(n);`
-
   ```js
-    let comb = [];
-    for (let i = 0; i < 1 << n; i++) { // 000...0부터 111...1까지
-      let item = "";
-      for (let j = 0; j < n; j++) {
-        if ((i & (1 << j)) !== 0) { // And연산
-          item += j;
+    const powerSet = (n) => {
+      let comb = [];
+      for (let i = 0; i < 1 << n; i++) { // 000...0부터 111...1까지
+        let item = "";
+        for (let j = 0; j < n; j++) {
+          if ((i & (1 << j)) !== 0) { // And연산
+            item += j;
+          }
         }
+        combination.push(item);
       }
-      combination.push(item);
     }
   ```
 <br>
