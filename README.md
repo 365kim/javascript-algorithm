@@ -509,6 +509,35 @@
   ```
 <br>
 
+### :rocket: 재귀함수로 arr의 모든 부분집합 만들기
+  ```js
+  const powerset = (arr) => {
+    let comb = [];
+
+    const powerSet = (prev, arr) => {
+      for (let i = 0; i < arr.length; i++) {
+        curr = prev + arr[i];
+        comb.push(curr);
+        powerSet(curr, arr.slice(i + 1));
+      }
+    };
+    powerSet("", arr);
+    return comb;
+  };
+
+  console.log(powerset(["A", "B", "C", "D"]));
+  /*
+  [
+    'A',    'AB',  'ABC',
+    'ABCD', 'ABD', 'AC',
+    'ACD',  'AD',  'B',
+    'BC',   'BCD', 'BD',
+    'C',    'CD',  'D'
+  ]
+  */
+  ```
+<br>
+
 ### :rocket: 대문자는 소문자로, 소문자는 대문자로
   ```js
   const swapUpperWithLower = (str) => {
