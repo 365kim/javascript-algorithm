@@ -436,8 +436,61 @@
 
 <br>
 
+### :rocket: slice()로 str의 모든 부분집합 만들기
+  ```js
+  const powerSet = (str) => {
+    let comb = [];
+    for (let i = 0; i < str.length; i++) {
+      for (let j = str.length; j > i; j--) {
+        comb.push(str.slice(i, j));
+      }
+    }
+    return comb;
+  };
+  console.log(powerSet("ABCD"));
+  /*
+  [
+    'ABCD', 'ABC', 'AB',
+    'A',    'BCD', 'BC',
+    'B',    'CD',  'C',
+    'D'
+  ]
+  */
+  ```
+<br>
 
-### :rocket: map으로 모든 부분집합 만들기
+### :rocket: 비트연산으로 n의 모든 부분집합 만들기
+  ```js
+  const powerSet = (n) => {
+    let comb = [];
+    for (let i = 0; i < 1 << n; i++) {
+      // 000...0부터 111...1까지
+      let item = "";
+      for (let j = 0; j < n; j++) {
+        if ((i & (1 << j)) !== 0) {
+          // And연산
+          item += j;
+        }
+      }
+      comb.push(item);
+    }
+    return comb;
+  };
+  console.log(powerSet(4));
+  /*
+  [
+    '',     '0',   '1',
+    '01',   '2',   '02',
+    '12',   '012', '3',
+    '03',   '13',  '013',
+    '23',   '023', '123',
+    '0123'
+  ]
+  */
+  ```
+<br>
+
+### :rocket: map으로 arr의 모든 부분집합 만들기
   ```js
   const powerset = (arr) =>
     arr.reduce(
@@ -453,23 +506,6 @@
     [ 1, 2 ], [ 0, 1, 2 ]
   ]
   */
-  ```
-<br>
-
-### :rocket: 비트연산으로 모든 부분집합 만들기
-  ```js
-    const powerSet = (n) => {
-      let comb = [];
-      for (let i = 0; i < 1 << n; i++) { // 000...0부터 111...1까지
-        let item = "";
-        for (let j = 0; j < n; j++) {
-          if ((i & (1 << j)) !== 0) { // And연산
-            item += j;
-          }
-        }
-        combination.push(item);
-      }
-    }
   ```
 <br>
 
