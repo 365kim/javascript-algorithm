@@ -49,7 +49,9 @@ const make_map = (width, height, pos, items) => {
     board[item[0] + 1][item[1] + 1] = WALL;
   }
   console.log(board);
+  return board;
 };
+
 make_map(
   4,
   5,
