@@ -18,10 +18,17 @@
 */
 
 const find = (str, n, data) => {
-  let res;
+  let res = [];
   for (let med of data) {
+    let strSet = new Set(str);
+    let medSet = new Set(med);
+
+    let intersection = new Set([...strSet].filter((v) => medSet.has(v)));
+    if (intersection.size === n) {
+      res.push(med);
+    }
   }
   return res;
 };
 
-find("ABCDEFGH", 4, ["EFGHIJKL", "EFGHIJKM", "EFGHIJKZ"]);
+console.log(find("ABCDEFGH", 4, ["EFGHIJKL", "EFGHIJKM", "EFGHIJKZ"]));
