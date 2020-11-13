@@ -538,51 +538,6 @@
   ```
 <br>
 
-### :rocket: NxN 배열 회전하기
-- `prototype`
-
-  ```js
-  let arr = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-  ];
-
-  let rotate90 = new Array(arr.length).fill().map((v) => []);
-  [...arr].reverse().forEach((v) => v.forEach((u, i) => rotate90[i].push(u)));
-  console.log(rotate90);
-  /*
-  [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3],
-  ];
-  */
-
-  let rotate180 = [];
-  [...arr].reverse().forEach((v) => rotate180.push(v));
-  console.log(rotate180);
-  /*
-  [
-    [9, 8, 7],
-    [6, 5, 4],
-    [3, 2, 1],
-  ];
-  */
-
-  let rotate270 = new Array(arr.length).fill().map((v) => []);
-  [...arr].forEach((v) => v.reverse().forEach((u, i) => rotate270[i].push(u)));
-  console.log(rotate270);
-  /*
-  [
-    [3, 6, 9],
-    [2, 5, 8],
-    [1, 4, 7],
-  ];
-  */
-  ```
-<br>
-
 ### :rocket: 대문자는 소문자로, 소문자는 대문자로
   ```js
   const swapUpperWithLower = (str) => {
@@ -690,6 +645,67 @@
     return arr;
   };
   ```
+<br>
+
+
+### :rocket: NxN 배열 회전하기
+- `prototype`
+
+  ```js
+  const rotate90 = (arr) => {
+    N = arr.length;
+    let res = new Array(N).fill().map((v) => new Array(N).fill(0));
+
+    for (let i = 0; i < N; i++) {
+      for (let j = 0; j < N; j++) {
+        res[j][N - 1 - i] = arr[i][j];
+      }
+    }
+    return res;
+  }
+  let arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+  let arr90 = rotate90(arr);
+  console.log(arr90);
+  /*
+  [
+    [7, 4, 1],
+    [8, 5, 2],
+    [9, 6, 3],
+  ];
+  */
+  let arr180 = rotate90(arr90);
+  console.log(arr180);
+  /*
+  [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1],
+  ];
+  */
+  let arr270 = rotate90(arr180);
+  console.log(arr270);
+  /*
+  [
+    [3, 6, 9],
+    [2, 5, 8],
+    [1, 4, 7],
+  ];
+  */
+  let arr360 = rotate90(arr270);
+  console.log(arr360);
+  /*
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+  */
+  ```
+<br>
 
 ### :rocket: 추가예정
 - `prototype`
