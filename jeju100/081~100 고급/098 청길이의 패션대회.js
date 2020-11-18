@@ -26,12 +26,15 @@
 
 const solution = (records) => {
   let res = [];
-  let arrRecords = records.split(" ").filter((v,i) => i % 2).map((v) => v.split(","));
+  let arrRecords = records
+    .split(" ")
+    .filter((v, i) => i % 2)
+    .map((v) => v.split(","));
   let arrClothes = [];
-  arrRecords.forEach((v) => arrClothes = arrClothes.concat(v));
+  arrRecords.forEach((v) => (arrClothes = arrClothes.concat(v)));
   let set = new Set(arrClothes);
   return new Array(...set);
-}
+};
 
 console.log(solution("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3"));
 console.log(solution("1번: 3,1 2번: 4 3번: 2,1,3 4번: 2,1,3,4"));
