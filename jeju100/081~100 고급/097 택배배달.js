@@ -17,12 +17,22 @@ ex) 배달원이 3명이고 각 거리가 [1,2,1,3,3,3]인 순서로 들어오�
 */
 
 
-function solution(n,l){
-	//코드 작성
+function solution(n, l){
+	
+	let count = 0;
+	let mans = new Array(n).fill(0);
+
+	while (l.length > 0) {
+		for (let i = 0; i < mans.length; i++) {
+			if (mans[i] === 0 && l.length > 0) {
+				mans[i] = l.shift();
+			}
+		}
+		count++;
+		mans = mans.map(v => --v);
+	}
+	return count + Math.max(...mans);
 }
 
-const 배달원 = 3;
-const 배달시간 = [1,2,1,3,3,3];
-
-console.log(solution(배달원, 배달시간));
+console.log(solution(3, [1,2,1,3,3,3]));
 // 출력값 = 5
