@@ -136,6 +136,21 @@
   ```
 <br>
 
+### :rocket: 2차원 배열을 1차원 배열로 합치기
+- `arr2D.forEach((v) => v.forEach((e) => arr1D.push(e)));`
+
+  ```js
+  let arr2D = [[1, 2], [3, 4], [5]];
+  let arr1D = [];
+  arr2D.forEach((v) => v.forEach((e) => arr1D.push(e)));
+  console.log(arr1D);
+  // [ 1, 2, 3, 4, 5 ]
+  
+  console.log([].concat(...arr2D));
+  // [ 1, 2, 3, 4, 5 ] (100,000 미만일 때만 사용)
+  ```
+<br>
+
 ### :rocket: 객체를 배열로 바꾸기
 - `Object.entries(obj);`
 
@@ -184,6 +199,15 @@
   ```
 <br>
 
+### :rocket: 문자열 키값 지정해서 배열로 쪼개기
+- `"str"..split(/[0-9]번: /);`
+
+  ```js
+  console.log("1번: a,b 2번: c,d 3번: e".split(/[0-9]번: /));
+  // [ '', 'a,b ', 'c,d ', 'e' ]
+  ```
+<br>
+
 ### :rocket: 문자열 순서 뒤집기
 - `[...str].reverse().join("");`
 
@@ -219,6 +243,8 @@
   // mik563
   ```
 <br>
+
+
 
 ### :rocket: 행열 전환하기
   ```js
