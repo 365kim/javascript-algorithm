@@ -30,11 +30,22 @@ const solution = (records) => {
     .split(" ")
     .filter((v, i) => i % 2)
     .map((v) => v.split(","));
-  let arrClothes = [];
-  arrRecords.forEach((v) => (arrClothes = arrClothes.concat(v)));
+  let arrClothes = [].concat(...arrRecords);
   let set = new Set(arrClothes);
   return new Array(...set);
 };
 
 console.log(solution("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3"));
 console.log(solution("1번: 3,1 2번: 4 3번: 2,1,3 4번: 2,1,3,4"));
+
+console.log("1번: a,b 2번: c,d 3번: e".split(/[0-9]번: /));
+// [ '', 'a,b ', 'c,d ', 'e' ]
+
+let arr2D = [[1, 2], [3, 4], [5]];
+console.log([].concat(...arr2D));
+// [ 1, 2, 3, 4, 5 ]
+
+let arr1D = [];
+arr2D.forEach((v) => v.forEach((e) => arr1D.push(e)));
+console.log(arr1D);
+// [ 1, 2, 3, 4, 5 ]
