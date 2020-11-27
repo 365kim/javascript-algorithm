@@ -733,6 +733,21 @@
   ```
 <br>
 
+### :rocket: 0 과 참거짓
+  ```js
+    let a = 0;
+    if (a) {
+      console.log('a is true');
+    } else {
+      console.log('a is false');
+    }
+    // a is false
+    console.log(a === false);
+    // false
+    console.log(a == false);
+    // true
+  ```
+
 ### :rocket: 추가예정
 - `prototype`
 
