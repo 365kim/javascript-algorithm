@@ -402,6 +402,24 @@
   ```
 <br>
 
+### :rocket: 1차원 배열에서 n번째에 특정 요소 추가하기
+- `arr.splice(n, 0, a)`
+
+  ```js
+  let arr = [100, 101, 102, 104];
+  arr.splice(3, 0, 103);
+  console.log(arr);
+  //[ 100, 101, 102, 103, 104 ], 배열 자체가 바뀌고 리턴하지 않음
+  ```
+  
+- `arr.slice(0, n).concat(a, arr.slice(n))`
+  ```
+  let arr = [100, 101, 102, 104];
+  console.log(arr.slice(0, 3).concat(103, arr.slice(3)));
+  // [ 100, 101, 102, 103, 104 ], 새로운 배열 리턴해줌
+  ```
+<br>
+
 ### :rocket: 1차원 배열에서 특정 요소만 삭제하기
 - `array.splice(array.indexOf(target), 1)`
 
