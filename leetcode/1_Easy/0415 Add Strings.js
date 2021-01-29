@@ -26,3 +26,4 @@ var addStrings = function (num1, num2) {
 };
 
 console.log(addStrings((num1 = '9333852702227987'), (num2 = '85731737104263')));
+// 9419584439332250
