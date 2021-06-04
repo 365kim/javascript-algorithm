@@ -538,7 +538,7 @@
   ```js
   const powerset = (arr) =>
     arr.reduce(
-      (subsets, value) => subsets.concat(subsets.map((set) => [...set, value])),
+      (acc, cur) => [...acc, ...acc.map((set) => [...set, cur])],
       [[]]
     );
   console.log(powerset([0, 1, 2]));
