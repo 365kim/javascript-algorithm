@@ -787,6 +787,7 @@
     console.log(a == false);
     // true
   ```
+<br>
 
 ### :rocket: 추가예정
 - `prototype`
