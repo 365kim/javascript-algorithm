@@ -538,7 +538,7 @@
   ```js
   const powerset = (arr) =>
     arr.reduce(
-      (subsets, value) => subsets.concat(subsets.map((set) => [...set, value])),
+      (acc, cur) => [...acc, ...acc.map((set) => [...set, cur])],
       [[]]
     );
   console.log(powerset([0, 1, 2]));
@@ -691,10 +691,32 @@
   ```
 <br>
 
+### :rocket: 이진탐색
+  ```js
+  const binarySearch = (array, target) => {
+    let [start, end] = [0, array.length - 1];
+
+    while (start <= end) {
+      let mid = Math.floor((start + end) / 2);
+
+      if (array[mid] === target) {
+        return mid;
+      }
+
+      if (target <= array[mid]) {
+        end = mid - 1;
+      } else {
+        start = mid + 1;
+      }
+    }
+    return -1;
+  };
+  ```
+  
+
+
 
 ### :rocket: NxN 배열 회전하기
-- `prototype`
-
   ```js
   const rotate90 = (arr) => {
     N = arr.length;
@@ -765,6 +787,7 @@
     console.log(a == false);
     // true
   ```
+<br>
 
 ### :rocket: 추가예정
 - `prototype`
