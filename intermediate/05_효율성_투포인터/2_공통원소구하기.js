@@ -2,7 +2,7 @@
 A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로 그램을 작성하세요.
 
 - 이중 for문: n x m
-- 각 배열 정렬 후 투포인터 알고리즘: nlogn + mlogm + n + m
+- 각 배열 정렬 후 투포인터 알고리즘: nlogn + n
 */
 
 const solution = (unsortedArr1, unsortedArr2) => {
