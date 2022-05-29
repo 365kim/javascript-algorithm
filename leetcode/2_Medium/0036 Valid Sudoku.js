@@ -40,7 +40,6 @@ const validateEachSubBox = (board) => {
           subBox.push(board[3 * i + a][3 * j + b]);
         }
       }
-      console.log(subBox);
       const numbersInSubBox = subBox.filter((v) => v !== '.');
       if (numbersInSubBox.length !== new Set(numbersInSubBox).size) {
         return false;
