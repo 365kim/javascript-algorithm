@@ -47,7 +47,6 @@ const myAtoi = (s) => {
 
   const MAX = Math.pow(2, 31) - 1;
   const MIN = -Math.pow(2, 31);
-  const RANGE = Math.pow(2, 32);
 
   if (signedNumber > MAX) {
     return MAX;
