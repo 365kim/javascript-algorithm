@@ -5,8 +5,13 @@ var maxProfit = function (prices) {
   let priceOfBuying = prices[0];
 
   for (let priceOfToday of prices) {
-    priceOfBuying = Math.min(priceOfToday, priceOfBuying);
-    maxProfit = Math.max(priceOfToday - priceOfBuying, maxProfit);
+    if (priceOfToday < priceOfBuying) {
+      // buy
+      priceOfBuying = priceOfToday;
+    } else if (priceOfToday - priceOfBuying > maxProfit) {
+      // sell
+      maxProfit = priceOfToday - priceOfBuying;
+    }
   }
   return maxProfit;
 };
