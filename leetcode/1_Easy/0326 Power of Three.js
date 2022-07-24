@@ -1,9 +1,9 @@
 /**
  * @param {number} n
  * -231 <= n <= 231 - 1
-
  * @return {boolean}
  */
+
 const isPowerOfThree = (n) => {
   if (n <= 0) return false;
 

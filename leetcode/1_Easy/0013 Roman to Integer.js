@@ -31,7 +31,6 @@ const romanToInt = (s) => {
 
     const oneDigit = s[i];
     const oneDigitToInt = map[oneDigit];
-    console.log('+', oneDigitToInt);
     result += oneDigitToInt;
   }
 
