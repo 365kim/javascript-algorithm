@@ -5,7 +5,7 @@
 
 const isValid = function (s) {
   const STARTS = ['(', '[', '{'];
-  let stack = [];
+  const stack = [];
   const top = () => stack[stack.length - 1];
 
   for (let char of s) {
