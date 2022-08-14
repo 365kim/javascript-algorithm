@@ -11,31 +11,36 @@ const setRowZero = (row, matrix) => {
 
 const setColZero = (col, matrix) => {
   for (let i = 0; i < matrix.length; i++) {
-    console.log(i, col);
     matrix[i][col] = 0;
   }
 };
 
 const setZeroes = (matrix) => {
-  const jmap = new Array(matrix[0].length).fill().map(() => false);
+  const iMap = new Array(matrix.length).fill().map(() => false);
+  const jMap = new Array(matrix[0].length).fill().map(() => false);
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
-      if (jmap[j]) continue;
-
       if (matrix[i][j] === 0) {
-        setRowZero(i, matrix);
-        setColZero(j, matrix);
-
-        jmap[j] = true;
-        break;
+        iMap[i] = true;
+        jMap[j] = true;
       }
     }
   }
 
+  iMap.forEach((v, i) => v && setRowZero(i, matrix));
+  jMap.forEach((v, j) => v && setColZero(j, matrix));
+
   return matrix;
 };
 
+console.log(
+  setZeroes([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+  ])
+);
 console.log(
   setZeroes([
     [0, 1, 2, 0],
