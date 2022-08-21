@@ -1,0 +1,13 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "author": "365kim",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  },
+  "license": "ISC"
+}
