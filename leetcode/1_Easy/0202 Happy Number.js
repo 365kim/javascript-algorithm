@@ -3,10 +3,10 @@
  * @return {boolean}
  */
 const isHappy = function (n) {
-  const len = String(n).length;
+  const TRY_COUNT = 10;
   let cur = n;
 
-  for (let i = 0; i < len * 10; i++) {
+  for (let i = 0; i < TRY_COUNT; i++) {
     let sum = 0;
     while (cur > 0) {
       sum += Math.pow(cur % 10, 2);
