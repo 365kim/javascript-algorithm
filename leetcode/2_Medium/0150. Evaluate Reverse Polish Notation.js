@@ -7,7 +7,7 @@ const operate = (a, b, operator) => {
     case '*':
       return a * b;
     case '/':
-      return a / b > 0 ? Math.floor(a / b) : Math.ceil(a / b);
+      return Math.trunc(a / b);
   }
 };
 
