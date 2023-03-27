@@ -14,16 +14,16 @@
 const permute = (nums) => {
   const answer = [];
 
-  recursive([], nums, answer, nums.length);
+  recursive([], nums, answer);
   return answer;
 };
 
-function recursive(cur, rest, answer, targetLength) {
-  if (cur.length === targetLength) {
+function recursive(cur, rest, answer) {
+  if (rest.length === 0) {
     answer.push(cur);
     return;
   }
-  rest.forEach((n, i) => recursive([...cur, n], [...rest.slice(0, i), ...rest.slice(i + 1)], answer, targetLength));
+  rest.forEach((n, i) => recursive([...cur, n], [...rest.slice(0, i), ...rest.slice(i + 1)], answer));
 }
 
 console.log(permute((nums = [1, 2, 3])));
